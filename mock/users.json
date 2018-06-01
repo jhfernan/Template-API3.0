@@ -10,7 +10,7 @@
 		"id": 1,
 		"name": "James Fernandes",
 		"admin": false,
-		"username": "nonadmin",
-		"password": "nonadmin"
+		"username": "noadmin",
+		"password": "noadmin"
 	}
 ]

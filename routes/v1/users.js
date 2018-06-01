@@ -1,9 +1,14 @@
 const express = require('express')
 const router = express.Router()
 
-const users = require('../mock/users.json')
+const users = require('../../mock/users.json')
+const auth = require('../../middleware/auth')
 
-router.get('/users', (req, res, next) => {
+// Make sure each request has token added to it
+router.use(auth.checkToken)
+
+router.route('/users')
+.get(auth.isAdmin, (req, res, next) => {
 	res.json(users)
 })
 
