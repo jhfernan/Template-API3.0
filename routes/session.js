@@ -27,6 +27,7 @@ router.route('/authenticate')
 	} else if (user.password !== req.body.password) {
 		res.status(403).send('Bad credentials')
 	} else {
+		delete user.password
 		jwt.sign(user, config.secret, { expiresIn: '7d' }, (err, token) => {
 			if (err) {
 				res.status(500).send('There was an error creating your token')
