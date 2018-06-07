@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 
 const cors = require('cors')
 
+const config = require('./config')
 const auth = require('./routes/session')
 const apiV1 = require('./routes/v1/index')
 
@@ -16,7 +17,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 
-app.use(cors())
+app.use(cors({ origin: config.options }))
 
 app.use('/api', auth)
 app.use('/api/v1', apiV1)

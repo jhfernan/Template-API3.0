@@ -5,6 +5,7 @@ let config = {
 
 if (process.env.NODE_ENV == 'production') {
 	config.secret = process.env.SECRET
+	config.allowedOrigins = 'https://example-cb-frontend.herokuapp.com/'
 }
 
 config.options = (origin, callback) => {
