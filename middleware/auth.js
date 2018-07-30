@@ -1,6 +1,5 @@
 const jwt = require('jsonwebtoken')
 const config = require('../config')
-const Cookie = require('cookie')
 
 const auth = {
 	checkToken: (req, res, next) => {
